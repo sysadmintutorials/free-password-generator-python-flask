@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Password Generator Wizard</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+        }
+    
+        h1 {
+          color: #333;
+          text-align: center;
+        }
+    
+        form {
+          margin: 20px auto;
+          max-width: 400px;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #f5f5f5;
+        }
+    
+        label {
+          display: block;
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+    
+        input[type="number"],
+        input[type="text"] {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-size: 14px;
+        }
+    
+        input[type="checkbox"] {
+          margin-top: 10px;
+        }
+    
+        input[type="submit"] {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          margin-top: 20px;
+          border: none;
+          border-radius: 4px;
+          background-color: #337ab7;
+          color: #fff;
+          font-size: 14px;
+          cursor: pointer;
+        }
+    
+        .generated-password {
+          font-size: 24px;
+          font-weight: bold;
+          text-align: center;
+          margin-top: 20px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding: 10px;
+          display: inline-block;
+        }
+      </style>
+</head>
+<body>
+    <h1>The Password Generator Wizard</h1>
+    <form method="POST" action="/">
+        <label for="length">Length:</label>
+        <input type="number" id="length" name="length" min="1" max="100" value="{{ default_length|default('12') }}" required>
+        <br>
+        <input type="checkbox" id="uppercase" name="uppercase" checked>
+        <label for="uppercase">Include uppercase letters</label>
+        <br>
+        <input type="checkbox" id="lowercase" name="lowercase" checked>
+        <label for="lowercase">Include lowercase letters</label>
+        <br>
+        <input type="checkbox" id="special_chars" name="special_chars" checked>
+        <label for="special_chars">Include special characters</label>
+        <br>
+        <input type="checkbox" id="numbers" name="numbers" checked>
+        <label for="numbers">Include numbers</label>
+        <br>
+        <label for="exclude_chars">Exclude characters:</label>
+        <input type="text" id="exclude_chars" name="exclude_chars" value="{{ default_exclude_chars|default('1l0o|`') }}">
+        <br>
+        <input type="submit" value="Generate Password">
+    </form>
+    {% if password %}
+        <center><div class="generated-password">{{ password }}</div></center>
+    {% endif %}
+</body>
+</html>
