@@ -11,6 +11,8 @@ If you have doubts about online password generators and prefer to make your own,
 
 Build The Ultimate Free Password Generator Using Python And Flask - Blog Article: https://www.sysadmintutorials.com/build-ultimate-free-password-generator-python-flask/
 
+Then take the next step and Docker containerize this application by following my step-by-step guide below:
+
 How To Docker Containerize A Python Flask Application - Blog Article: https://www.sysadmintutorials.com/how-to-docker-containerize-a-python-flask-application/
 
 ## File Listing & Description
