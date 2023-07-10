@@ -1,5 +1,5 @@
 # Free Password Generator Using Python and Flask
-#### Date: 30/06/2023
+#### Date: 11/07/2023
 #### Version: 1
 #### Blog: www.sysadmintutorials.com
 #### Twitter: @systutorials
